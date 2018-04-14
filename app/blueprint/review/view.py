@@ -1,4 +1,6 @@
 import requests
+from app.database import Business
+from time import gmtime, strftime
 from flask import Blueprint, redirect, render_template, request
 
 blueprint_review = Blueprint('review', __name__, template_folder='templates')
@@ -28,8 +30,12 @@ def review_post():
     id = request.form['id']
     rating = request.form['rating']
     reason = request.form['reason']
-    print(rating)
-    print(reason)
+    name = request.form['user_name']
+
+    current_time = strftime("%m-%d-%Y %H:%M", gmtime())
+
+    business = Business(id, name, rating, reason, current_time)
+    print(business)
 
     url = '/detail/' + id
 
