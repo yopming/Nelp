@@ -19,22 +19,22 @@ def show_detail(id):
     business_name = data_result['name']
     business_address = data_result['formatted_address']
     business_phone_number = data_result['formatted_phone_number']
-    _business_photos = data_result['photos']
-    business_photos = []
-    photo_limit = 0
-    for pho in _business_photos:
-        url = pho['html_attributions'][0]
-        business_photos.append(url)
-        photo_limit += 1
+    # _business_photos = data_result['photos']
 
-        if photo_limit > 2:
-            break
+    # photo_flag = False
+    # if len(_business_photos) > 0:
+    #     photo_flag = True
+    #     path_photo_base = "https://maps.googleapis.com/maps/api/place/photo?photoreference="
+    #     path_photo_reference = _business_photos[0]['photo_reference']
+    #     path_photo_key = "&key=AIzaSyDSBTpaBYPE4BQVmahrDrB974p3ysXjL0k"
+    #     path_photo = path_photo_base + path_photo_reference + path_photo_key
+    #     r_photo = requests.get(path_photo, stream=True)
+
 
     # get comments from database
 
     return render_template('detail.html',
                            name = business_name,
                            address = business_address,
-                           number = business_phone_number,
-                           photos = business_photos
+                           number = business_phone_number
                            )
