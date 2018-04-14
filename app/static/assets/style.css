@@ -27,3 +27,7 @@
 #nelp-main .nelp-detail .comments {
     margin-top: 50px;
 }
+
+.card-columns {
+    column-count: 4;
+}
