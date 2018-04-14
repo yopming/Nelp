@@ -25,8 +25,13 @@ def home_query():
         print ('Connection Error')
     Jresponse = responseData.text
     data = json.loads(Jresponse)
-
-    print (data)
+    results = data['results']
+    next_token = data['next_page_token']
+    print (results)
+    for result in results:
+        print (result['id'])
+        print (result['name'])
+    print (len(results))
 
     return redirect(url_for('list.show_list'))
 
