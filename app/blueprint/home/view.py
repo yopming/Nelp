@@ -27,11 +27,17 @@ def home_query():
     data = json.loads(Jresponse)
     results = data['results']
     next_token = data['next_page_token']
-    print (results)
+    idlist = []
+    namelist = []
+    iconlist = []
     for result in results:
-        print (result['id'])
-        print (result['name'])
-    print (len(results))
+        idlist.append(result['id'])
+        namelist.append(result['name'])
+        iconlist.append(result['icon'])
 
-    return redirect(url_for('list.show_list'))
+    return render_template('list.html',
+                           id_list = idlist,
+                           name_list = namelist,
+                           icon_list = iconlist
+                           )
 
