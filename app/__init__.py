@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from app.blueprint.home.view import blueprint_home
 from app.blueprint.list.view import blueprint_list
 from app.blueprint.detail.view import blueprint_detail
+from app.blueprint.review.view import blueprint_review
 
 import config
 
@@ -17,6 +18,7 @@ def not_found(error):
 app.register_blueprint(blueprint_home)
 app.register_blueprint(blueprint_list, url_prefix='/list')
 app.register_blueprint(blueprint_detail, url_prefix='/detail')
+app.register_blueprint(blueprint_review, url_prefix='/review')
 
 
 # database
