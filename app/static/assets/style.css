@@ -1,17 +1,26 @@
-html, body {
-    height: 100%;
-    width: 100%;
+#nelp-main .navbar .navbar-brand {
+    margin: 0 auto;
 }
 
-body {
-    background: url(images/background.jpg) no-repeat center center fixed;
-    background-size: cover;
+#nelp-main .nelp-list .lists {
+    padding: 20px 0;
 }
 
-#nelp-main {
-    height: 100%;
+#nelp-main .nelp-list .pager {
+    margin-top: 40px;
 }
 
-#nelp-main .search {
-    padding-top:200px;
+#nelp-main .nelp-detail .names {
+    text-align: center;
+}
+#nelp-main .nelp-detail .names h2 {
+    margin-top: 40px;
+    marign-bottom: 20px;
+}
+#nelp-main .nelp-detail .names p {
+    margin-bottom: 35px;
+}
+#nelp-main .nelp-detail .images {
+    margin: 50px auto;
+    text-align: center;
 }

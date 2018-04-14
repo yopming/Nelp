@@ -16,4 +16,3 @@ def home_query():
     path_key = "&key=AIzaSyDSBTpaBYPE4BQVmahrDrB974p3ysXjL0k"
     path = path_base + path_location + path_radius + path_type + path_key
 
-    

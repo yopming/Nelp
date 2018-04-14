@@ -9,8 +9,6 @@ import config
 app = Flask(__name__)
 app.config.from_object('config')
 
-db = SQLAlchemy(app)
-
 @app.errorhandler(404)
 def not_found(error):
     return render_template('404.html'), 404
@@ -21,4 +19,16 @@ app.register_blueprint(blueprint_list, url_prefix='/list')
 app.register_blueprint(blueprint_detail, url_prefix='/detail')
 
 
+# database
+db = SQLAlchemy(app)
+
+class Business(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    business_id = db.Column(db.String(100), nullable=False)
+    comment_user = db.Column(db.String(200))
+    comment_content = db.Column(db.Text)
+    comment_time = db.Column(db.String(100))
+
 db.create_all()
+
+
