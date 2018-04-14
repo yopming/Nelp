@@ -24,16 +24,18 @@
     </div>
 
     <div class="comments">
-        <div class="list-group">
-            <span class="list-group-item list-group-item-action flex-column align-items-start active">
+        {% for rev in review %}
+        <div class="list-group list-group-flush">
+            <span class="list-group-item">
                 <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small>3 days ago</small>
+                    <h5 class="mb-1">Rating: {{ rev.comment_rating }}</h5>
+                    <small>{{ rev.comment_time }}</small>
                 </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                <small>Donec id elit non mi porta.</small>
+                <p class="mb-1">{{ rev.comment_content }}</p>
+                <small>{{ rev.comment_user }}</small>
             </span>
         </div>
+        {% endfor %}
     </div>
 
 </div>

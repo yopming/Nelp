@@ -1,5 +1,6 @@
 import requests
 from flask import Blueprint, render_template
+from app.blueprint.review.view import Business
 
 blueprint_detail = Blueprint('detail', __name__, template_folder='templates')
 
@@ -27,11 +28,13 @@ def show_detail(id):
 
 
     # get comments from database
+    review = Business.query.filter_by(business_id=id).all()
 
     return render_template('detail.html',
                            name = business_name,
                            address = business_address,
                            number = business_phone_number,
                            photo = path_photo,
-                           id = id
+                           id = id,
+                           review=review
                            )
