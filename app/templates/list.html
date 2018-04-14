@@ -5,13 +5,15 @@
 <div class="nelp-list">
 
     <div class="lists">
-        <div class="card" style="width: 18rem;">
+        <div class="card-columns">
             {% for id in id_list %}
-                <img class="card-img-top" src="{{icon_list[loop.index-1]}}" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">{{name_list[loop.index-1]}}</h5>
-                    <a href="#" class="btn btn-primary">Check Detail</a>
-                </div>
+            <div class="card">
+                    <img class="card-img-top" src="{{icon_list[loop.index-1]}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{name_list[loop.index-1]}}</h5>
+                        <a href="#" class="btn btn-primary">Check Detail</a>
+                    </div>
+            </div>
             {% endfor %}
         </div>
     </div>
