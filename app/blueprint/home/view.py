@@ -1,7 +1,8 @@
-from flask import Blueprint, render_template
 import requests
 import simplejson
 import json
+from flask import Blueprint, render_template, redirect, url_for
+from app.blueprint.list.view import show_list
 
 blueprint_home = Blueprint('home', __name__, template_folder='templates')
 
@@ -26,4 +27,6 @@ def home_query():
     data = json.loads(Jresponse)
 
     print (data)
+
+    return redirect(url_for('list.show_list'))
 
