@@ -1,7 +1,5 @@
 import json
-import flask
 import requests
-import simplejson
 from flask import Blueprint, render_template, redirect, url_for, request
 
 blueprint_home = Blueprint('home', __name__, template_folder='templates')
@@ -33,6 +31,7 @@ def home_query():
     iconlist = []
     placeidlist = []
     addresslist = []
+    photolist = []
     for result in results:
         idlist.append(result['id'])
         placeidlist.append(result['place_id'])
@@ -40,11 +39,20 @@ def home_query():
         iconlist.append(result['icon'])
         addresslist.append(result['vicinity'])
 
+        if 'photos' in result:
+            if result['photos'][0]['photo_reference']:
+                path_photo_base = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="
+                path_photo_reference = result['photos'][0]['photo_reference']
+                path_photo_key = "&key=AIzaSyDSBTpaBYPE4BQVmahrDrB974p3ysXjL0k"
+                path_photo = path_photo_base + path_photo_reference + path_photo_key
+                photolist.append(path_photo)
+
     return render_template('list.html',
-                            id_list=idlist,
-                            placeid_list=placeidlist,
-                            name_list=namelist,
-                            icon_list=iconlist,
-                            address_list=addresslist
+                           id_list=idlist,
+                           placeid_list=placeidlist,
+                           name_list=namelist,
+                           icon_list=iconlist,
+                           address_list=addresslist,
+                           photo_list=photolist
                            )
 
