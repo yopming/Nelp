@@ -14,14 +14,11 @@
 }
 
 #nelp-main .nelp-detail .names {
-    text-align: center;
+    margin-top: 10px;
+    padding: 20px !important;
 }
-#nelp-main .nelp-detail .names h2 {
-    margin-top: 40px;
-    marign-bottom: 20px;
-}
-#nelp-main .nelp-detail .names p {
-    margin-bottom: 35px;
+#nelp-main .nelp-detail .names .img {
+    max-height: 400px;
 }
 #nelp-main .nelp-detail .images {
     margin: 50px auto;
