@@ -8,8 +8,19 @@
 </head>
 <body>
 
-<div class="container">
-
+<div class="container" id="nelp-main">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 search">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Business Name">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button">Search</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
 </div>
 
 <script src="{{ url_for('static', filename='jQuery/jquery-3.3.1.min.js') }}"></script>
