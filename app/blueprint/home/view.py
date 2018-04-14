@@ -16,7 +16,8 @@ def home_query():
     path_radius = "&radius=50000"
     path_type = "&type=restaurant"
     path_key = "&key=AIzaSyDSBTpaBYPE4BQVmahrDrB974p3ysXjL0k"
-    key_word = "&keyword=" + request.args.get('keyword')
+    keyword = request.args.get('keyword')
+    key_word = "&keyword=" + keyword
     path = path_base + path_location + path_radius + path_type +key_word+ path_key
     try:
         responseData = requests.post(path)
@@ -48,6 +49,7 @@ def home_query():
                 photolist.append(path_photo)
 
     return render_template('list.html',
+                           keyword=keyword,
                            id_list=idlist,
                            placeid_list=placeidlist,
                            name_list=namelist,

@@ -2,6 +2,9 @@
     margin: 0 auto;
 }
 
+#nelp-main .nelp-list {
+    margin-top: 20px;
+}
 #nelp-main .nelp-list .lists {
     padding: 20px 0;
 }
