@@ -12,6 +12,9 @@ body {
     height: 100%;
 }
 
+#nelp-home .logo {
+    text-align: center;
+}
 #nelp-home .search {
     padding-top:200px;
 }
