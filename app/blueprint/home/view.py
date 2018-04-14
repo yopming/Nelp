@@ -1,4 +1,7 @@
 from flask import Blueprint, render_template
+import requests
+import simplejson
+import json
 
 blueprint_home = Blueprint('home', __name__, template_folder='templates')
 
@@ -15,5 +18,13 @@ def home_query():
     path_type = "&type=restaurant"
     path_key = "&key=AIzaSyDSBTpaBYPE4BQVmahrDrB974p3ysXjL0k"
     path = path_base + path_location + path_radius + path_type + path_key
+    try:
+        responseData = requests.post(path)
+    except requests.ConnectionError:
+        print ('Connection Error')
+    Jresponse = responseData.text
+    data = json.loads(Jresponse)
+
+    print (data)
 
     
