@@ -3,6 +3,7 @@ import simplejson
 import json
 from flask import Blueprint, render_template, redirect, url_for
 from app.blueprint.list.view import show_list
+import flask
 
 blueprint_home = Blueprint('home', __name__, template_folder='templates')
 
@@ -18,7 +19,8 @@ def home_query():
     path_radius = "&radius=50000"
     path_type = "&type=restaurant"
     path_key = "&key=AIzaSyDSBTpaBYPE4BQVmahrDrB974p3ysXjL0k"
-    path = path_base + path_location + path_radius + path_type + path_key
+    key_word = "&keyword=" + flask.request.values.get('keyword')
+    path = path_base + path_location + path_radius + path_type +key_word+ path_key
     try:
         responseData = requests.post(path)
     except requests.ConnectionError:
