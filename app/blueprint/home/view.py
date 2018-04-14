@@ -26,7 +26,9 @@ def home_query():
     Jresponse = responseData.text
     data = json.loads(Jresponse)
     results = data['results']
-    next_token = data['next_page_token']
+    next_token = None
+    if 'next_page_token' in data:
+        next_token = data['next_page_token']
     idlist = []
     namelist = []
     iconlist = []
