@@ -1,4 +1,3 @@
-import json
 import requests
 from flask import Blueprint, render_template
 
@@ -33,5 +32,6 @@ def show_detail(id):
                            name = business_name,
                            address = business_address,
                            number = business_phone_number,
-                           photo = path_photo
+                           photo = path_photo,
+                           id = id
                            )

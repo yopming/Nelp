@@ -1,6 +1,6 @@
 import json
 import requests
-from flask import Blueprint, render_template, redirect, url_for, request
+from flask import Blueprint, render_template, request
 
 blueprint_home = Blueprint('home', __name__, template_folder='templates')
 

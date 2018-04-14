@@ -9,7 +9,7 @@
             <div class="col-4">
                 <img class="img" src="{{ photo }}" />
             </div>
-            <div class="col-8">
+            <div class="col-8" style="text-align: right">
                 <h3 class="display-4">{{ name }}</h3>
                 <p class="lead">{{ address }}</p>
                 <p>{{ number }}</p>
@@ -17,6 +17,11 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-12">
+            <a role="button" href="/review/{{ id }}" class="btn btn-dark">Write Review</a>
+        </div>
+    </div>
 
     <div class="comments">
         <div class="list-group">
@@ -27,22 +32,6 @@
                 </div>
                 <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
                 <small>Donec id elit non mi porta.</small>
-            </span>
-            <span class="list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small class="text-muted">3 days ago</small>
-                </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                <small class="text-muted">Donec id elit non mi porta.</small>
-            </span>
-            <span class="list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small class="text-muted">3 days ago</small>
-                </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                <small class="text-muted">Donec id elit non mi porta.</small>
             </span>
         </div>
     </div>
