@@ -1,0 +1,17 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: url(images/background.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+#nelp-home {
+    height: 100%;
+}
+
+#nelp-home .search {
+    padding-top:200px;
+}

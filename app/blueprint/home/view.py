@@ -27,4 +27,3 @@ def home_query():
 
     print (data)
 
-    
